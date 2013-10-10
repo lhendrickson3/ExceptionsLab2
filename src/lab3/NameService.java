@@ -22,7 +22,7 @@ public class NameService{
     public String extractLastName(String fullName) {
         String[] nameParts = fullName.split(" ");
         if (nameParts.length != LAST_NAME_IDX + 1){
-            throw new IllegalArgumentException("Please Enter Your First and Last Name as Follows (FirstName LastName)");
+            throw new ArrayIndexOutOfBoundsException("Please Enter Your First and Last Name as Follows (FirstName LastName)");
         }
         return nameParts[LAST_NAME_IDX];
     }
@@ -37,7 +37,7 @@ public class NameService{
     public String extractFirstName(String fullName) {
         String[] nameParts = fullName.split(" ");
         if (nameParts.length != FIRST_NAME_IDX + 1){
-            throw new IllegalArgumentException("Please Enter Your First and Last Name as Follows (FirstName LastName)");
+            throw new ArrayIndexOutOfBoundsException("Please Enter Your First and Last Name as Follows (FirstName LastName)");
         }
         return nameParts[FIRST_NAME_IDX];
     }
