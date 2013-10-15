@@ -11,13 +11,10 @@ package lab3;
  */
 public class Challenge3 {
 
-    public static void main(String[] args) {
-        try{
+    public static void main(String[] args) throws Exception {
+
         new InputOutputGui().startConversation();
-        } catch (Exception exception){
-            String msg = exception.getMessage();
-            System.out.println(msg);
-        } 
+         
     }
     
 }
