@@ -19,12 +19,14 @@ public class NameService{
      * @return the last name
      */
     public String extractLastName(String fullName) {
-        String[] nameParts = fullName.split(" ");
-        if (nameParts.length != LAST_NAME_IDX + 1){
-            throw new ArrayIndexOutOfBoundsException ("Please Enter Your First and Last Name as Follows (FirstName LastName)");
+
+        if (fullName == null || fullName.length() == 0){
+            throw new IllegalArgumentException("Please enter First and Last Name with a space in between");
         }
-        return nameParts[LAST_NAME_IDX];
+        String[] nameParts = fullName.split(" ");
+        return nameParts[nameParts.length - 1];
     }
+
     
     /**
      * Finds and returns the first name from within a full name. Caution: 

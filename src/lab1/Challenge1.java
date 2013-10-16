@@ -28,11 +28,12 @@ public class Challenge1 {
     }
     
     public String extractLastName(String fullName) throws IllegalArgumentException {
-        String[] nameParts = fullName.split(" ");
-        if (nameParts.length != LAST_NAME_IDX + 1){
+
+        if (fullName == null || fullName.length() == 0){
             throw new IllegalArgumentException("Please enter First and Last Name with a space in between");
         }
-        return nameParts[LAST_NAME_IDX];
+        String[] nameParts = fullName.split(" ");
+        return nameParts[nameParts.length - 1];
     }
 
 }
