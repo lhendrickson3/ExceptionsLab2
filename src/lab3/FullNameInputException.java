@@ -8,8 +8,8 @@ package lab3;
  *
  * @author User
  */
-public class MyException extends Exception {
-    public MyException(String message) {
+public class FullNameInputException extends IllegalArgumentException {
+    public FullNameInputException(String message) {
         super(message);
     }
 }

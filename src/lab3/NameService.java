@@ -19,9 +19,9 @@ public class NameService{
      * @param fullName - a name containing a first name and a last name
      * @return the last name
      */
-    public String extractLastName(String fullName) throws MyException{
+    public String extractLastName(String fullName) throws FullNameInputException{
         if (fullName == null || fullName.length() == 0){
-            throw new IllegalArgumentException("Please enter First and Last Name with a space in between");
+            throw new FullNameInputException("Please enter First and Last Name with a space in between");
         }
         String[] nameParts = fullName.split(" ");
         return nameParts[nameParts.length - 1];
@@ -35,10 +35,10 @@ public class NameService{
      * @param fullName - a name containing a first name and a last name
      * @return the first name
      */
-    public String extractFirstName(String fullName) throws MyException{
+    public String extractFirstName(String fullName) throws FullNameInputException{
         String[] nameParts = fullName.split(" ");
         if (nameParts.length != FIRST_NAME_IDX + 1){
-            throw new MyException("Please Enter Your First and Last Name as Follows (FirstName LastName)");
+            throw new FullNameInputException("Please Enter Your First and Last Name as Follows (FirstName LastName)");
         }
         return nameParts[FIRST_NAME_IDX];
     }
